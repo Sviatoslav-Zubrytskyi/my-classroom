@@ -1,9 +1,10 @@
-import './App.css';
+import React from 'react';
+import HomePage from "./pages/HomePage";
 
-function App() {
-  return (
-      <h1>app</h1>
-  );
-}
+const App = () => {
+    return (
+        <HomePage/>
+    );
+};
 
 export default App;
