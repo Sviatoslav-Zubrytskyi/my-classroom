@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
 import styles from '../styles/MainLayout.module.css';
@@ -8,7 +8,7 @@ const MainLayout = ({children}) => {
         <div className={styles.main}>
             <Navbar/>
             <div className={styles.content}>
-                <Sidebar/>
+                <Sidebar primary="primary"/>
                 {children}
             </div>
         </div>

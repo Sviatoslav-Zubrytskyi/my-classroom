@@ -5,18 +5,21 @@ import App from './App';
 import HomePage from './pages/HomePage'
 import CoursePage from "./pages/CoursePage";
 import TaskPage from "./pages/TaskPage";
+import {Provider} from "react-redux";
+import store from "./redux/store";
 import {
     createBrowserRouter,
     RouterProvider
 } from "react-router-dom";
+
 const router = createBrowserRouter([
     {
-        path:"/",
+        path: "/",
         element: <App/>
     },
     {
         path: "/home",
-        element:<HomePage/>
+        element: <HomePage/>
     },
     {
         path: "/course",
@@ -29,6 +32,8 @@ const router = createBrowserRouter([
 ])
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <RouterProvider router={router}></RouterProvider>
+    <Provider store={store}>
+        <RouterProvider router={router}></RouterProvider>
+    </Provider>
 );
 

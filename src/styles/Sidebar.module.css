@@ -1,8 +1,9 @@
 .sidebar {
-    width: 25rem;
+    width: 18.75rem;
     min-height: calc(100vh - 5rem);
     border-right: 1px lightslategray solid;
 }
+
 .item {
     display: flex;
     width: 90%;
@@ -10,26 +11,40 @@
     align-items: center;
     border-radius: 0 2rem 2rem 0;
     padding-block: 0.25rem;
-    padding-left:0.25rem;
+    padding-left: 0.25rem;
     text-decoration: none;
 }
+
 .item:hover {
     content: "";
     background-color: #9a9ca72F;
 }
+
 .item svg {
-    padding-right: 0.5rem;
+    padding: 0 0.5rem 0 1rem;
 }
+
 .items {
     font-size: 1.5rem;
     padding-block: 1rem;
     width: 100%;
     border-bottom: 1px lightslategray solid;
 }
+
 .item span {
     text-decoration: none;
     color: #000;
 }
+
 .focus {
     background-color: #e8ecfc !important;
+}
+
+.text {
+    line-height: 1.25rem;
+    font-size: 0.875rem;
+}
+
+.courseIcon{
+    transition-property: none !important;
 }

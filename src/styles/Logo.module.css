@@ -1,0 +1,14 @@
+.logo {
+    height: 55%;
+    max-height: 55%;
+}
+svg {
+    color:black;
+}
+.gradientStart {
+    stop-color: #4e70f7;
+}
+
+.gradientEnd {
+    stop-color: #78e4f3;
+}

@@ -1,15 +1,25 @@
 .navbar {
     display:flex;
     width:100%;
-    height: 5rem;
-    background-color: cornflowerblue;
+    height: 4rem;
+    /*background-color: cornflowerblue;*/
+    border-bottom: 1px lightslategray solid;;
 }
-.left-nav {
+.leftNav {
     display:flex;
     flex-basis: 50%;
     align-items: center;
     justify-content: flex-start;
 }
-.right-nav {
+.rightNav {
     flex-basis: 50%;
+}
+.logoText{
+    padding-left: 1rem;
+    font-size: 1.5rem;
+    font-family: "Roboto Light", serif;
+    font-weight: 600;
+    background: -webkit-linear-gradient(#4e70f7, #333);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
