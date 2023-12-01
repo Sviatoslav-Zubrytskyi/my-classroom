@@ -1,9 +1,8 @@
 import React, {useState} from 'react';
 import styles from '../styles/MenuButton.module.css';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch} from 'react-redux';
 const MenuButton = ({sendDataToParent}) => {
     const dispatch = useDispatch();
-    const sharedState = useSelector((state) => state.sharedState);
 
     const updateSharedState = () => {
         dispatch({ type: 'UPDATE_SHARED_STATE', payload: isOpen});

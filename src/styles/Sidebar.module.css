@@ -4,9 +4,16 @@
     border-right: 1px lightslategray solid;
 }
 
+.items {
+    font-size: 1.5rem;
+    padding-block: 1rem;
+    width: 100%;
+    border-bottom: 1px lightslategray solid;
+}
+
 .item {
+    /*margin-right: 1rem;*/
     display: flex;
-    width: 90%;
     min-height: 2.5rem;
     align-items: center;
     border-radius: 0 2rem 2rem 0;
@@ -14,7 +21,6 @@
     padding-left: 0.25rem;
     text-decoration: none;
 }
-
 .item:hover {
     content: "";
     background-color: #9a9ca72F;
@@ -24,12 +30,6 @@
     padding: 0 0.5rem 0 1rem;
 }
 
-.items {
-    font-size: 1.5rem;
-    padding-block: 1rem;
-    width: 100%;
-    border-bottom: 1px lightslategray solid;
-}
 
 .item span {
     text-decoration: none;
@@ -45,6 +45,6 @@
     font-size: 0.875rem;
 }
 
-.courseIcon{
+.courseIcon {
     transition-property: none !important;
 }

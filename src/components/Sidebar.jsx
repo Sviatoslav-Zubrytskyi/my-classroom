@@ -2,12 +2,11 @@ import styles from '../styles/Sidebar.module.css'
 import {Link, useLocation} from "react-router-dom";
 import styled from 'styled-components';
 import { useSelector } from 'react-redux';
-import {useState} from "react";
 const Aside = styled.aside`
-  min-width: ${props => (props.sidebarIsOpen ? '5rem' : '18.75rem')};
+  min-width: ${props => (props.sidebarIsOpen ? '4.75rem' : '18.75rem')};
   min-height: calc(100vh - 5rem);
   border-right: 1px lightslategray solid;
-  transition: .3s;
+  transition: linear all .1s;
 `;
 const Sidebar = () => {
     const sharedState = useSelector((state) => state.sharedState);
