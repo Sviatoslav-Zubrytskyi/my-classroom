@@ -1,12 +1,12 @@
 import React from 'react';
-import Topbar from "../components/Topbar";
+import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
-import styles from '../MainLayout.module.css';
+import styles from '../styles/MainLayout.module.css';
 
 const MainLayout = ({children}) => {
     return (
         <div className={styles.main}>
-            <Topbar/>
+            <Navbar/>
             <div className={styles.content}>
                 <Sidebar/>
                 {children}
