@@ -9,7 +9,6 @@ const Navbar = () => {
         <nav className={styles.navbar}>
             <div className={styles.leftNav}>
                 <MenuButton/>
-                {/*TO DO*/}
                 <Link to={"/"} className={styles.logoLink}>
                     <Logo/>
                     <span className={styles.logoText}>Morningstar</span>
