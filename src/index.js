@@ -8,11 +8,11 @@ import TaskPage from "./pages/TaskPage";
 import {Provider} from "react-redux";
 import store from "./redux/store";
 import {
-    createBrowserRouter,
+    createHashRouter,
     RouterProvider
 } from "react-router-dom";
 
-const router = createBrowserRouter([
+const router = createHashRouter([
     {
         path: "/",
         element: <App/>
