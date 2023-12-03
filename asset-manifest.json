@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/my-classroom/home/static/css/main.6879b0a7.css",
-    "main.js": "/my-classroom/home/static/js/main.bba6ea93.js",
+    "main.js": "/my-classroom/home/static/js/main.c088a067.js",
     "static/media/anime.jpg": "/my-classroom/home/static/media/anime.8a87a1057641c1b12f62.jpg",
     "index.html": "/my-classroom/home/index.html",
     "main.6879b0a7.css.map": "/my-classroom/home/static/css/main.6879b0a7.css.map",
-    "main.bba6ea93.js.map": "/my-classroom/home/static/js/main.bba6ea93.js.map"
+    "main.c088a067.js.map": "/my-classroom/home/static/js/main.c088a067.js.map"
   },
   "entrypoints": [
     "static/css/main.6879b0a7.css",
-    "static/js/main.bba6ea93.js"
+    "static/js/main.c088a067.js"
   ]
 }
