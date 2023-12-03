@@ -1,14 +1,18 @@
 .sidebar {
-    width: 18.75rem;
-    min-height: calc(100vh - 5rem);
-    border-right: 1px lightslategray solid;
+    min-height: calc(100vh - 4.05rem);
+    border-right: 0.0625rem solid rgb(218,220,224);
+    position: sticky;
+    top:4.05rem;
+    left:0;
+    z-index: 1000;
+    transition: linear all .1s;
 }
 
 .items {
     font-size: 1.5rem;
     padding-block: 1rem;
     width: 100%;
-    border-bottom: 1px lightslategray solid;
+    border-bottom: 0.0625rem solid rgb(218,220,224);
 }
 
 .item {

@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Google Sans", Roboto, Arial, sans-serif;
+}
+
+.course {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    border-radius: 0.5rem;
+    margin: 1.5rem;
+}
+/*.course::after {*/
+/*    content: "";*/
+/*    position: absolute;*/
+/*    border-right: 1px lightslategray solid;*/
+/*    border-left: 1px lightslategray solid;*/
+/*    border-top: 1px lightslategray solid;*/
+/*    border-radius: 0.5rem 0.5rem 0 0;*/
+/*    z-index: 3;*/
+/*    width:18.71rem;*/
+/*    height: 6.25rem;*/
+/*}*/
+
+.courseInfo {
+    border-radius: 0.5rem 0.5rem 0 0;
+    display: flex;
+    flex-direction: column;
+    width: 18.75rem;
+    height: 6.25rem;
+    background-image: url("../images/anime.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top right;
+    border-right: 0.0625rem solid rgb(218,220,224);
+    border-left: 0.0625rem solid rgb(218,220,224);
+    border-top: 0.0625rem solid rgb(218,220,224);
+    text-decoration: none;
+    color:white;
+}
+a {
+    text-decoration: none;
+}
+.courseName, .courseTeacher {
+    /*text-decoration: none;*/
+    margin: 1rem 0 1rem 1rem;
+    display: inline-block;
+    background: black;
+    padding: 0 0.25rem 0 0.25rem;
+    z-index:2;
+    color:white;
+}
+.courseName:hover {
+    text-decoration: underline;
+    cursor:pointer;
+}
+.courseName {
+    text-decoration: none;
+    font-size: 1.375rem;
+    line-height: 1.75rem;
+}
+
+.courseTeacher {
+    font-size: 0.8125rem;
+    line-height: 1.25rem;
+    position: relative; /* Necessary for pseudo-element positioning */
+}
+.courseTeacher:hover::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0.175rem;
+    width: 90%;
+    height: 1px; /* Adjust the thickness of the underline */
+    background-color: white; /* Adjust the color of the underline */
+}
+.tripleDotsIcon {
+    color: white;
+    z-index:99;
+}
+
+.topDiv {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.emptySpace {
+    width: 18.75rem;
+    height: 9.5rem;
+    border: 0.0625rem solid rgb(218,220,224);
+}
+.additionalInfo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height:4rem;
+    width:18.75rem;
+    border-right: 0.0625rem solid rgb(218,220,224);
+    border-left: 0.0625rem solid rgb(218,220,224);
+    border-bottom: 0.0625rem solid rgb(218,220,224);
+}
+.folderIcon {
+    margin:1rem;
+    cursor: pointer;
+}
+.link {
+    position: absolute;
+    top:0;
+    left:0;
+    width:18.75rem;
+    height:6.25rem;
+}
+.but {
+    background: none;
+    border: none;
+    margin-right: 0.5rem;
+    z-index:99;
+    width:3rem;
+    height: 3rem;
+    border-radius: 50%;
+}
+.but:hover {
+    cursor: pointer;
+    background: rgba(1,1,1,0.1);
+}

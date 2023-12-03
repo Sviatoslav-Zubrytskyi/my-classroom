@@ -4,9 +4,6 @@ import styled from 'styled-components';
 import { useSelector } from 'react-redux';
 const Aside = styled.aside`
   min-width: ${props => (props.sidebarIsOpen ? '4.75rem' : '18.75rem')};
-  min-height: calc(100vh - 5rem);
-  border-right: 1px lightslategray solid;
-  transition: linear all .1s;
 `;
 const Sidebar = () => {
     const sharedState = useSelector((state) => state.sharedState);
@@ -14,7 +11,7 @@ const Sidebar = () => {
     const isHomeActive = currentPage === "/home" || currentPage === "/";
     const isCourseActive = currentPage === "/course";
     return (
-        <Aside sidebarIsOpen={sharedState}>
+        <Aside sidebarIsOpen={sharedState} className={styles.sidebar}>
             <div className={styles.items}>
                 <Link to="/home" className={`${styles.item} ${isHomeActive ? styles.focus : ''}`}>
                     <svg focusable="false" width="24" height="24" viewBox="0 0 24 24">

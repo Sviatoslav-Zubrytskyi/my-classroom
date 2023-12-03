@@ -2,8 +2,12 @@
     display:flex;
     width:100%;
     height: 4rem;
-    /*background-color: cornflowerblue;*/
-    border-bottom: 1px lightslategray solid;;
+    background-color: white;
+    border-bottom: 0.0625rem solid rgb(218,220,224);
+    position: sticky;
+    top:0;
+    left:0;
+    z-index: 999;
 }
 .leftNav {
     display:flex;
@@ -22,4 +26,13 @@
     background: -webkit-linear-gradient(#4e70f7, #333);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+
+}
+.logoLink {
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+    height:100%;
+    align-items: center;
+    justify-content: center;
 }
