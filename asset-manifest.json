@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/my-classroom/static/css/main.02d5d88d.css",
+    "main.js": "/my-classroom/static/js/main.a4a6217c.js",
+    "static/media/anime.jpg": "/my-classroom/static/media/anime.8a87a1057641c1b12f62.jpg",
+    "index.html": "/my-classroom/index.html",
+    "main.02d5d88d.css.map": "/my-classroom/static/css/main.02d5d88d.css.map",
+    "main.a4a6217c.js.map": "/my-classroom/static/js/main.a4a6217c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.02d5d88d.css",
+    "static/js/main.a4a6217c.js"
+  ]
+}
