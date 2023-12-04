@@ -1,15 +1,93 @@
 .main {
-    width:80%;
-    margin: 10rem auto;
+    width: 50%;
+    margin: 2.5rem auto;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
 .courseImageContainer {
-    width:100%;
+    position: relative;
+    width: 100%;
     height: 20rem;
+    background-image: url('../images/anime.jpg');
+    border-radius: 0.5rem;
 }
-.courseImage {
-    object-fit: cover;
-    object-position: center center;
+
+.courseNameContainer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+}
+
+.courseName {
+    color: white;
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+}
+
+.content {
+    display:flex;
+    flex-direction: row;
+    margin-top:2rem;
+}
+
+.events {
+    display: flex;
+    flex-direction: column;
+    height: 5.75rem;
+    border: 0.0625rem solid rgb(218,220,224);
+    border-radius: 1rem;
+    padding: 1rem;
+}
+.eventsItem {
+    flex-basis: 33%;
+}
+.eventName {
+    letter-spacing: .01785714em;
+    font-family: "Google Sans",Roboto,Arial,sans-serif;
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.25rem;
+    color: #3c4043;
+    text-transform: none;
+}
+.eventDate {
+    color: lightslategray;
+    line-height: 1.25rem;
+    font-size: 0.8125rem;
+    font-weight: 400;
+    color: rgba(0,0,0,.549);
+}
+.viewBut {
+    display: flex;
+    justify-content: flex-end;
+}
+.aText {
+    text-decoration: none;
+    color: #2962ff;
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.25rem;
+}
+.viewContainer {
+    position:relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 0.5rem 0 0.5rem;
+    margin-right: -0.5rem;
+}
+.viewLink {
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height: 100%;
+    cursor: pointer;
+    border-radius: 0.5rem;
+}
+.viewLink:hover {
+    background-color:rgba(25,103,210,0.1) ;
 }
