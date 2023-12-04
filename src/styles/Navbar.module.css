@@ -36,3 +36,46 @@
     align-items: center;
     justify-content: center;
 }
+.rightNav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap:2rem;
+}
+.profileIcon {
+    border-radius: 50%;
+    background: orange;
+    width:2.5rem;
+    height: 2.5rem;
+    margin-right: 1.5rem;
+}
+.plusIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    width:2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    margin-left: 1rem;
+}
+.plusIcon:hover {
+    background-color: #9a9ca72F;
+}
+.profileImage {
+    width:100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+@media (max-width: 600px) {
+    .profileIcon {
+        width:0;
+    }
+    .logoText {
+        font-size: 1rem;
+    }
+
+}

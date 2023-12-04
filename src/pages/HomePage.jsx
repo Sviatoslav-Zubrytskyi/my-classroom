@@ -1,6 +1,6 @@
 import MainLayout from "../layouts/MainLayout";
 import React from "react";
-import styles from '../styles/homePage.module.css';
+import styles from '../styles/HomePage.module.css';
 import Course from "../components/Course";
 function HomePage() {
     return (

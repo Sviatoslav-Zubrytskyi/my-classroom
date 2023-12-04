@@ -1,11 +1,12 @@
 .sidebar {
-    min-height: calc(100vh - 4.05rem);
+    height: calc(100svh - 4.05rem);
     border-right: 0.0625rem solid rgb(218,220,224);
     position: sticky;
     top:4.05rem;
     left:0;
     z-index: 1000;
     transition: linear all .1s;
+    background: white;
 }
 
 .items {
@@ -24,9 +25,9 @@
     padding-block: 0.25rem;
     padding-left: 0.25rem;
     text-decoration: none;
+
 }
 .item:hover {
-    content: "";
     background-color: #9a9ca72F;
 }
 
