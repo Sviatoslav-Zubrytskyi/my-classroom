@@ -1,5 +1,5 @@
 .sidebar {
-    height: calc(100svh - 4.05rem);
+    height: calc(100lvh - 4.05rem);
     border-right: 0.0625rem solid rgb(218,220,224);
     position: sticky;
     top:4.05rem;
