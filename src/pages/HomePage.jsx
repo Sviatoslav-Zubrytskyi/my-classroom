@@ -6,6 +6,7 @@ function HomePage() {
     return (
         <MainLayout>
             <Course/>
+
         </MainLayout>
     );
 }

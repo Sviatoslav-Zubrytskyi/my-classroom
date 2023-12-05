@@ -12,8 +12,8 @@
 .items {
     font-size: 1.5rem;
     padding-block: 1rem;
-    width: 100%;
     border-bottom: 0.0625rem solid rgb(218,220,224);
+    padding-right: 1rem;
 }
 
 .item {
@@ -52,4 +52,5 @@
 
 .courseIcon {
     transition-property: none !important;
+
 }

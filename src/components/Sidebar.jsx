@@ -8,6 +8,7 @@ const Aside = styled.aside`
     position: absolute;
     width: ${props => (props.sidebarIsOpen ? '0' : '18.75rem')};
     min-width: ${props => (props.sidebarIsOpen ? '0' : '18.75rem')};
+    overflow: hidden;
   }
 `;
 const Sidebar = () => {
