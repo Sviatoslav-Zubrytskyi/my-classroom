@@ -7,6 +7,7 @@ import {faUser} from '@fortawesome/free-solid-svg-icons'
 import NotebookIcon from "../../components/Icons/coursePageIcons/NotebookIcon";
 import BookIcon from "../../components/Icons/coursePageIcons/BookIcon";
 import UserIcon from "../../components/Icons/coursePageIcons/UserIcon";
+import Task from "../../components/Task/Task";
 
 function CoursePage() {
     return (<MainLayout>
@@ -31,6 +32,7 @@ function CoursePage() {
                         </div>
                     </div>
                 </div>
+
                 <div className={styles.tasks}>
                     <div className={`${styles.task} ${styles.announce}`}>
                         <UserIcon/>
@@ -38,45 +40,90 @@ function CoursePage() {
                             <p className={styles.announceText}>Announce something to your class</p>
                         </div>
                     </div>
-                    <div className={`${styles.task}`}>
-                        <Link to={"/task"} className={styles.taskLink}></Link>
-                        <div className={styles.taskContainer}>
-                            <NotebookIcon/>
-                            <div className={styles.taskContent}>
-                                <p className={styles.taskText}>Tasads dsadasadsdas adsadsadsadsadsas dasd adsk</p>
-                                <p className={styles.taskDate}>Dec 5</p>
-                            </div>
-                        </div>
-                        <div className={styles.distance}></div>
-                        <button className={styles.but}>
-                            <svg focusable="false" width="24" height="24" viewBox="0 0 24 24"
-                                 className={styles.tripleDotsIcon}
-                                 fill="gray">
-                                <path
-                                    d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path>
-                            </svg>
-                        </button>
-                    </div>
-                    <div className={`${styles.task}`}>
-                        <Link to={"/task"} className={styles.taskLink}></Link>
-                        <div className={styles.taskContainer}>
-                            <BookIcon/>
-                            <div className={styles.taskContent}>
-                                <p className={styles.taskText}>Tasads dsadasadsdads dsadasadsdads dsadasadsdas
-                                    adsadsadsadsadsas dasd adsk</p>
-                                <p className={styles.taskDate}>Dec 5</p>
-                            </div>
-                        </div>
-                        <div className={styles.distance}></div>
-                        <button className={styles.but}>
-                            <svg focusable="false" width="24" height="24" viewBox="0 0 24 24"
-                                 className={styles.tripleDotsIcon}
-                                 fill="gray">
-                                <path
-                                    d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path>
-                            </svg>
-                        </button>
-                    </div>
+                    <Task task={{
+                        "text": "task1 is to do something. " +
+                            "I just need text to test the feature, dont bother yourself reading this, please. " +
+                            "Loren ipsum Loren ipsum Loren ipsum Loren ipsum Loren ipsum",
+                        "date":"Dec 6",
+                        "icon": <NotebookIcon/>
+                    }}/>
+                    <Task task={{
+                        "text": "task2 is to do something. " +
+                            "I just need text to test the feature, dont bother yourself reading this, please. " +
+                            "Loren ipsum Loren ipsum Loren ipsum Loren ipsum Loren ipsum",
+                        "date":"Dec 5",
+                        "icon": <BookIcon/>
+                    }}/>
+                    <Task task={{
+                        "text": "task3 is to do something. " +
+                            "I just need text to test the feature, dont bother yourself reading this, please. " +
+                            "Loren ipsum Loren ipsum Loren ipsum Loren ipsum Loren ipsum",
+                        "date":"Dec 4",
+                        "icon": <NotebookIcon/>
+                    }}/>
+                    <Task task={{
+                        "text": "task4 is to do something. " +
+                            "I just need text to test the feature, dont bother yourself reading this, please. " +
+                            "Loren ipsum Loren ipsum Loren ipsum Loren ipsum Loren ipsum",
+                        "date":"Dec 4",
+                        "icon": <BookIcon/>
+                    }}/>
+                    <Task task={{
+                        "text": "task5 is to do something. " +
+                            "I just need text to test the feature, dont bother yourself reading this, please. " +
+                            "Loren ipsum Loren ipsum Loren ipsum Loren ipsum Loren ipsum",
+                        "date":"Dec 4",
+                        "icon": <NotebookIcon/>
+                    }}/>
+                    <Task task={{
+                        "text": "task6 is to do something. " +
+                            "I just need text to test the feature, dont bother yourself reading this, please. " +
+                            "Loren ipsum Loren ipsum Loren ipsum Loren ipsum Loren ipsum",
+                        "date":"Dec 3",
+                        "icon": <BookIcon/>
+                    }}/>
+                    <Task task={{
+                        "text": "task6 is to do something. " +
+                            "I just need text to test the feature, dont bother yourself reading this, please. " +
+                            "Loren ipsum Loren ipsum Loren ipsum Loren ipsum Loren ipsum",
+                        "date":"Dec 3",
+                        "icon": <NotebookIcon/>
+                    }}/>
+                    <Task task={{
+                        "text": "task7 is to do something. " +
+                            "I just need text to test the feature, dont bother yourself reading this, please. " +
+                            "Loren ipsum Loren ipsum Loren ipsum Loren ipsum Loren ipsum",
+                        "date":"Dec 3",
+                        "icon": <BookIcon/>
+                    }}/>
+                    <Task task={{
+                        "text": "task8 is to do something. " +
+                            "I just need text to test the feature, dont bother yourself reading this, please. " +
+                            "Loren ipsum Loren ipsum Loren ipsum Loren ipsum Loren ipsum",
+                        "date":"Dec 2",
+                        "icon": <NotebookIcon/>
+                    }}/>
+                    <Task task={{
+                        "text": "task9 is to do something. " +
+                            "I just need text to test the feature, dont bother yourself reading this, please. " +
+                            "Loren ipsum Loren ipsum Loren ipsum Loren ipsum Loren ipsum",
+                        "date":"Dec 2",
+                        "icon": <BookIcon/>
+                    }}/>
+                    <Task task={{
+                        "text": "task10 is to do something. " +
+                            "I just need text to test the feature, dont bother yourself reading this, please. " +
+                            "Loren ipsum Loren ipsum Loren ipsum Loren ipsum Loren ipsum",
+                        "date":"Dec 1",
+                        "icon": <NotebookIcon/>
+                    }}/>
+                    <Task task={{
+                        "text": "task11 is to do something. " +
+                            "I just need text to test the feature, dont bother yourself reading this, please. " +
+                            "Loren ipsum Loren ipsum Loren ipsum Loren ipsum Loren ipsum",
+                        "date":"Dec 1",
+                        "icon": <BookIcon/>
+                    }}/>
                 </div>
             </div>
         </div>

@@ -1,19 +1,18 @@
-import styles from "../../pages/CoursePage/CoursePage.module.css";
+import styles from "./Task.module.css";
 
 import {Link} from "react-router-dom";
-import BookIcon from "../Icons/coursePageIcons/BookIcon";
 import React from "react";
 
 
-const Task = () => {
+const Task = ({task}) => {
     return (
             <div className={`${styles.task}`}>
                 <Link to={"/task"} className={styles.taskLink}></Link>
                 <div className={styles.taskContainer}>
-                    <BookIcon/>
+                    {task.icon}
                     <div className={styles.taskContent}>
-                        <p className={styles.taskText}>Tasads dsadasadsdads dsadasadsdads dsadasadsdas adsadsadsadsadsas dasd adsk</p>
-                        <p className={styles.taskDate}>Dec 5</p>
+                        <p className={styles.taskText}>{task.text}</p>
+                        <p className={styles.taskDate}>{task.date}</p>
                     </div>
                 </div>
                 <div className={styles.distance}></div>
