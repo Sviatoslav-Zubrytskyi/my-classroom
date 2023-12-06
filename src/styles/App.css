@@ -93,3 +93,7 @@ body {
 .footer {
     flex: 0 0 auto;
 }
+.button {
+    margin:0;
+    padding: 0;
+}

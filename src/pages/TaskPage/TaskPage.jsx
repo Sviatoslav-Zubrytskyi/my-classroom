@@ -2,6 +2,7 @@ import MainLayout from "../../layouts/MainLayout";
 import React from "react";
 import styles from './TaskPage.module.css';
 import NotebookIcon from "../../components/Icons/coursePageIcons/NotebookIcon";
+import TripleDotsButton from "../../components/Icons/tripleDotsButton/TripleDotsButton";
 
 function TaskPage() {
     return (
@@ -15,7 +16,7 @@ function TaskPage() {
                         <div className={styles.taskInfo}>
                             <div className={styles.titleContainer}>
                                 <span className={styles.title}>L's theme A</span>
-                                {/*TODO: triple dots button*/}
+                                <TripleDotsButton color="rgb(25,103,210)"/>
                             </div>
                             <div className={styles.additionalInfo}>
                                 <span className={styles.author}>author</span>
@@ -39,7 +40,7 @@ function TaskPage() {
                         </div>
                         <div className={`${styles.commentsContainer} ${styles.classComments}`}>
                             <div className={styles.commentsSign}>
-                                {/*TODO: users icon*/}
+                                {/*TODO: users icon component*/}
                                 <div className={styles.usersIcon}>
                                     <svg focusable="false" width="24" height="24" viewBox="0 0 24 24"
                                          className=" NMm5M">
@@ -72,7 +73,7 @@ function TaskPage() {
                     </div>
                     <div className={styles.commentsContainer}>
                         <div className={styles.commentsSign}>
-                            {/*TODO: users icon*/}
+                            {/*TODO: users icon component*/}
                             <div className={styles.usersIcon}>
                                 <svg focusable="false" width="24" height="24" viewBox="0 0 24 24"
                                      className=" NMm5M">

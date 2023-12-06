@@ -1,0 +1,17 @@
+.but {
+    background: none;
+    border: none;
+    z-index: 99;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+}
+
+.but:hover {
+    cursor: pointer;
+    background: rgba(1, 1, 1, 0.1);
+}
+.tripleDotsIcon {
+    color: white;
+    z-index: 99;
+}

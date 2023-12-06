@@ -27,13 +27,19 @@
     border-bottom: rgb(25, 103, 210) 1px solid;
     padding-bottom: 1rem;
 }
-
+.titleContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
 .title {
     word-wrap: break-word;
     font-size: 2rem;
     font-weight: 400;
     color: rgb(25, 103, 210);
     line-height: 2.5rem;
+    margin-right: auto;
 }
 
 .additionalInfo {
