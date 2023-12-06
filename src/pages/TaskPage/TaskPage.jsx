@@ -14,7 +14,7 @@ function TaskPage() {
                     <div className={styles.content}>
                         <div className={styles.taskInfo}>
                             <div className={styles.titleContainer}>
-                                <span className={styles.title}>Тест за результатами літньої школи 2023</span>
+                                <span className={styles.title}>L's theme A</span>
                                 {/*TODO: triple dots button*/}
                             </div>
                             <div className={styles.additionalInfo}>
@@ -24,10 +24,20 @@ function TaskPage() {
                             </div>
                         </div>
                         <div className={styles.mainInfo}>
-                            <span className={styles.mainText}>Прошу всіх заповнити до 16:00, 30 червня 2023.</span>
+                            <span className={styles.mainText}>Listen to the L's theme A.</span>
+                            <iframe
+                                width="614"
+                                height="345"
+                                src="https://www.youtube.com/embed/qR6dzwQahOM"
+                                title="W3Schools Free Online Web Tutorials"
+                                frameBorder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowFullScreen
+                                className={styles.YTiframe}
+                            ></iframe>
                             {/*TODO: file*/}
                         </div>
-                        <div className={styles.commentsContainer}>
+                        <div className={`${styles.commentsContainer} ${styles.classComments}`}>
                             <div className={styles.commentsSign}>
                                 {/*TODO: users icon*/}
                                 <div className={styles.usersIcon}>
