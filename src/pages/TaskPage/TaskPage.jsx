@@ -1,7 +1,7 @@
-import MainLayout from "../layouts/MainLayout";
+import MainLayout from "../../layouts/MainLayout";
 import React from "react";
-import styles from '../styles/TaskPage.module.css';
-import NotebookIcon from "../components/icons/NotebookIcon";
+import styles from './TaskPage.module.css';
+import NotebookIcon from "../../components/Icons/coursePageIcons/NotebookIcon";
 function TaskPage() {
     return (
         <MainLayout>

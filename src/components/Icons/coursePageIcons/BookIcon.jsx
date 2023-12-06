@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../../styles/NotebookIcon.module.css';
+import styles from './defaultIcon.module.css';
 
 const NotebookIcon = () => {
     return (

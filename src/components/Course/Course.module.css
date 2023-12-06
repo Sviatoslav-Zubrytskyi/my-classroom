@@ -6,7 +6,6 @@
     border-radius: 0.5rem;
     margin: 1.5rem;
 }
-
 @media (max-width: 600px) {
     .course {
         margin: 1.5rem auto;
@@ -19,7 +18,7 @@
     flex-direction: column;
     width: 18.75rem;
     height: 6.25rem;
-    background-image: url("../images/anime.jpg");
+    background-image: url("../../images/anime.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top right;

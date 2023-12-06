@@ -1,0 +1,14 @@
+.courses {
+    display: flex;
+    flex-wrap: wrap;
+}
+@media (max-width: 1248px) {
+    .courses {
+        padding-left: 5rem;
+    }
+}
+@media (max-width: 600px) {
+    .courses {
+        padding-left: 0;
+    }
+}

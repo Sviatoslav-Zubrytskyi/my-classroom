@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import styles from '../styles/MenuButton.module.css';
+import styles from './MenuButton.module.css';
 import { useDispatch} from 'react-redux';
 const MenuButton = ({sendDataToParent}) => {
     const dispatch = useDispatch();

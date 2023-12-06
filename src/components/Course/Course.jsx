@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from "../styles/Course.module.css";
+import styles from "./Course.module.css";
 import {Link} from "react-router-dom";
 const Course = () => {
     const openChoice = () => {

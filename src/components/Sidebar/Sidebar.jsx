@@ -1,4 +1,4 @@
-import styles from '../styles/Sidebar.module.css'
+import styles from './Sidebar.module.css'
 import {Link, useLocation} from "react-router-dom";
 import styled from 'styled-components';
 import { useSelector } from 'react-redux';

@@ -2,9 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './styles/index.css';
 import App from './App';
-import HomePage from './pages/HomePage'
-import CoursePage from "./pages/CoursePage";
-import TaskPage from "./pages/TaskPage";
+import HomePage from './pages/HomePage/HomePage'
+import CoursePage from "./pages/CoursePage/CoursePage";
+import TaskPage from "./pages/TaskPage/TaskPage";
 import {Provider} from "react-redux";
 import store from "./redux/store";
 import {

@@ -1,6 +1,6 @@
-import Navbar from "../components/Navbar";
-import Sidebar from "../components/Sidebar";
-import styles from '../styles/MainLayout.module.css';
+import Navbar from "../components/Navbar/Navbar";
+import Sidebar from "../components/Sidebar/Sidebar";
+import styles from './MainLayout.module.css';
 
 const MainLayout = ({children}) => {
     return (

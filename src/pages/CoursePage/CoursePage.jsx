@@ -1,11 +1,12 @@
-import MainLayout from "../layouts/MainLayout";
+import MainLayout from "../../layouts/MainLayout";
 import React from "react";
-import styles from '../styles/CoursePage.module.css';
+import styles from './CoursePage.module.css';
 import {Link} from "react-router-dom";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faUser} from '@fortawesome/free-solid-svg-icons'
-import NotebookIcon from "../components/icons/NotebookIcon";
-import BookIcon from "../components/icons/BookIcon";
+import NotebookIcon from "../../components/Icons/coursePageIcons/NotebookIcon";
+import BookIcon from "../../components/Icons/coursePageIcons/BookIcon";
+import UserIcon from "../../components/Icons/coursePageIcons/UserIcon";
 
 function CoursePage() {
     return (<MainLayout>
@@ -32,10 +33,7 @@ function CoursePage() {
                 </div>
                 <div className={styles.tasks}>
                     <div className={`${styles.task} ${styles.announce}`}>
-                        <div className={styles.defaultIcon}>
-                            <FontAwesomeIcon icon={faUser}/>
-
-                        </div>
+                        <UserIcon/>
                         <div>
                             <p className={styles.announceText}>Announce something to your class</p>
                         </div>
@@ -64,7 +62,8 @@ function CoursePage() {
                         <div className={styles.taskContainer}>
                             <BookIcon/>
                             <div className={styles.taskContent}>
-                            <p className={styles.taskText}>Tasads dsadasadsdads dsadasadsdads dsadasadsdas adsadsadsadsadsas dasd adsk</p>
+                                <p className={styles.taskText}>Tasads dsadasadsdads dsadasadsdads dsadasadsdas
+                                    adsadsadsadsadsas dasd adsk</p>
                                 <p className={styles.taskDate}>Dec 5</p>
                             </div>
                         </div>

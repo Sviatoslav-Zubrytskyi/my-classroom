@@ -1,8 +1,8 @@
-import styles from '../styles/Navbar.module.css';
-import Logo from '../components/icons/Logo';
-import MenuButton from "./MenuButton";
+import styles from './Navbar.module.css';
+import Logo from '../Icons/Logo/Logo';
+import MenuButton from "../MenuButton/MenuButton";
 import {Link} from "react-router-dom";
-import profileImage from '../images/Sviatoslav.jpg'
+import profileImage from '../../images/Sviatoslav.jpg'
 
 const Navbar = () => {
 
