@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/my-classroom/static/css/main.a9f036e4.css",
-    "main.js": "/my-classroom/static/js/main.6824bcf6.js",
+    "main.css": "/my-classroom/static/css/main.96b0a47f.css",
+    "main.js": "/my-classroom/static/js/main.04d8494d.js",
     "static/media/Sviatoslav.jpg": "/my-classroom/static/media/Sviatoslav.6ab89bd4f412d91f6dbf.jpg",
     "static/media/anime.jpg": "/my-classroom/static/media/anime.8a87a1057641c1b12f62.jpg",
     "index.html": "/my-classroom/index.html",
-    "main.a9f036e4.css.map": "/my-classroom/static/css/main.a9f036e4.css.map",
-    "main.6824bcf6.js.map": "/my-classroom/static/js/main.6824bcf6.js.map"
+    "main.96b0a47f.css.map": "/my-classroom/static/css/main.96b0a47f.css.map",
+    "main.04d8494d.js.map": "/my-classroom/static/js/main.04d8494d.js.map"
   },
   "entrypoints": [
-    "static/css/main.a9f036e4.css",
-    "static/js/main.6824bcf6.js"
+    "static/css/main.96b0a47f.css",
+    "static/js/main.04d8494d.js"
   ]
 }
