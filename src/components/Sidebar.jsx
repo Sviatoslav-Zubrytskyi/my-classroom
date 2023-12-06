@@ -4,6 +4,9 @@ import styled from 'styled-components';
 import { useSelector } from 'react-redux';
 const Aside = styled.aside`
   min-width: ${props => (props.sidebarIsOpen ? '4.75rem' : '18.75rem')};
+  @media (max-width: 1248px) {
+    position: absolute;
+  }
   @media (max-width: 600px) {
     position: absolute;
     width: ${props => (props.sidebarIsOpen ? '0' : '18.75rem')};
