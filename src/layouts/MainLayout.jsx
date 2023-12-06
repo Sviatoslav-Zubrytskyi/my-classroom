@@ -7,7 +7,7 @@ const MainLayout = ({children}) => {
         <div className={styles.main}>
             <Navbar/>
             <div className={styles.content}>
-                    <Sidebar primary="primary"/>
+                <Sidebar/>
                 {children}
             </div>
         </div>

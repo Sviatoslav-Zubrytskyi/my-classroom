@@ -5,10 +5,10 @@ import { useSelector } from 'react-redux';
 const Aside = styled.aside`
   min-width: ${props => (props.sidebarIsOpen ? '4.75rem' : '18.75rem')};
   @media (max-width: 1248px) {
-    position: absolute;
+    position: fixed;
   }
   @media (max-width: 600px) {
-    position: absolute;
+    position: fixed;
     width: ${props => (props.sidebarIsOpen ? '0' : '18.75rem')};
     min-width: ${props => (props.sidebarIsOpen ? '0' : '18.75rem')};
     overflow: hidden;
