@@ -2,8 +2,6 @@ import MainLayout from "../../layouts/MainLayout";
 import React from "react";
 import styles from './CoursePage.module.css';
 import {Link} from "react-router-dom";
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faUser} from '@fortawesome/free-solid-svg-icons'
 import NotebookIcon from "../../components/Icons/coursePageIcons/NotebookIcon";
 import BookIcon from "../../components/Icons/coursePageIcons/BookIcon";
 import UserIcon from "../../components/Icons/coursePageIcons/UserIcon";
