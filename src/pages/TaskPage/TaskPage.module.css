@@ -45,7 +45,9 @@
 .additionalInfo {
     display: flex;
 }
-
+.addFileContainer svg {
+    margin-right: 0.25rem;
+}
 .author, .dot, .date {
     text-overflow: ellipsis;
     overflow: hidden;

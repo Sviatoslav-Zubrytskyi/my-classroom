@@ -36,7 +36,8 @@ function TaskPage() {
                                 allowFullScreen
                                 className={styles.YTiframe}
                             ></iframe>
-                            {/*TODO: file*/}
+                            {/*TODO: file view*/}
+                            {/*TODO: video focus screen*/}
                         </div>
                         <div className={`${styles.commentsContainer} ${styles.classComments}`}>
                             <div className={styles.commentsSign}>
@@ -63,8 +64,11 @@ function TaskPage() {
                         </div>
                         <div className={styles.sendTask}>
                             <div className={styles.addFileContainer}>
-                                {/*TODO: + icon*/}
-                                <span className={styles.addFileText}> Add file</span>
+                                {/*TODO: + icon component*/}
+                            <svg focusable="false" width="20" height="20" viewBox="0 0 24 24" fill="rgb(25, 103, 210)">
+                                <path d="M20 13h-7v7h-2v-7H4v-2h7V4h2v7h7v2z"></path>
+                            </svg>
+                                <span className={styles.addFileText}>Add file</span>
                             </div>
                             <div className={styles.markAsDoneContainer}>
                                 <span className={styles.markAsDoneText}>Mark as done</span>
@@ -77,7 +81,8 @@ function TaskPage() {
                             <div className={styles.usersIcon}>
                                 <svg focusable="false" width="24" height="24" viewBox="0 0 24 24"
                                      className=" NMm5M">
-                                    <path d="M12 6c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2m0 9c2.7 0 5.8 1.29 6 2v1H6v-.99c.2-.72 3.3-2.01 6-2.01m0-11C9.79 4 8 5.79 8 8s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 9c-2.67 0-8 1.34-8 4v3h16v-3c0-2.66-5.33-4-8-4z"></path>
+                                    <path
+                                        d="M12 6c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2m0 9c2.7 0 5.8 1.29 6 2v1H6v-.99c.2-.72 3.3-2.01 6-2.01m0-11C9.79 4 8 5.79 8 8s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 9c-2.67 0-8 1.34-8 4v3h16v-3c0-2.66-5.33-4-8-4z"></path>
                                 </svg>
                             </div>
                             <span className={styles.commentsSpan}>Class comments</span>
