@@ -2,19 +2,36 @@ import React from 'react';
 import styles from "./Course.module.css";
 import {Link} from "react-router-dom";
 import TripleDotsButton from "../Icons/tripleDotsButton/TripleDotsButton";
-const Course = () => {
+import styled from "styled-components";
+const Course = ({groupName, teacher, bg, bgPosition, color}) => {
+    const CourseInfo = styled.div`
+      border-radius: 0.5rem 0.5rem 0 0;
+      display: flex;
+      flex-direction: column;
+      width: 18.75rem;
+      height: 6.25rem;
+      border-right: 0.0625rem solid rgb(218, 220, 224);
+      border-left: 0.0625rem solid rgb(218, 220, 224);
+      border-top: 0.0625rem solid rgb(218, 220, 224);
+      text-decoration: none;
+      color: ${color};
+      background: ${bg};
+      background-size: cover;
+      background-repeat: repeat;
+      background-position: ${bgPosition};
+    `;
     return (
         <div className={styles.course}>
-            <div className={styles.courseInfo}>
+            <CourseInfo>
                 <div className={styles.topDiv}>
                     <Link to="/course" className={styles.link}></Link>
-                    <Link to={"/course"} className={styles.courseName}>IT-Group G</Link>
+                    <Link to={"/course"} className={styles.courseName}>{groupName}</Link>
                     <TripleDotsButton color="white"/>
                 </div>
                 <div>
-                    <Link to={{}} className={styles.courseTeacher}>Rob Loves</Link>
+                    <Link to={{}} className={styles.courseTeacher}>{teacher}</Link>
                 </div>
-            </div>
+            </CourseInfo>
             <div className={styles.emptySpace}>
 
             </div>
