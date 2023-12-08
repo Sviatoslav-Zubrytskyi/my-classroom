@@ -6,13 +6,6 @@
     padding: 2rem;
 }
 
-.courseImageContainer {
-    position: relative;
-    width: 100%;
-    height: 20rem;
-    background-image: url('../../images/anime.jpg');
-    border-radius: 0.5rem;
-}
 
 .courseNameContainer {
     position: absolute;
@@ -22,7 +15,7 @@
 }
 
 .courseName {
-    color: white;
+    color: inherit;
     font-size: 2.25rem;
     line-height: 2.75rem;
 }

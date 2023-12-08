@@ -3,7 +3,7 @@ import styles from "./Course.module.css";
 import {Link} from "react-router-dom";
 import TripleDotsButton from "../Icons/tripleDotsButton/TripleDotsButton";
 import styled from "styled-components";
-const Course = ({groupName, teacher, bg, bgPosition, color}) => {
+const Course = ({groupName, teacher, bg, bgPosition, color, id}) => {
     const CourseInfo = styled.div`
       border-radius: 0.5rem 0.5rem 0 0;
       display: flex;
@@ -24,8 +24,8 @@ const Course = ({groupName, teacher, bg, bgPosition, color}) => {
         <div className={styles.course}>
             <CourseInfo>
                 <div className={styles.topDiv}>
-                    <Link to="/course" className={styles.link}></Link>
-                    <Link to={"/course"} className={styles.courseName}>{groupName}</Link>
+                    <Link to={`/course/${id}`} className={styles.link}></Link>
+                    <Link to={`/course/${id}`} className={styles.courseName}>{groupName}</Link>
                     <TripleDotsButton color="white"/>
                 </div>
                 <div>

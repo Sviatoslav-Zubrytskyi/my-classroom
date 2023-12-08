@@ -22,7 +22,7 @@ const router = createHashRouter([
         element: <HomePage/>
     },
     {
-        path: "/course",
+        path: "/course/:id",
         element: <CoursePage/>
     },
     {

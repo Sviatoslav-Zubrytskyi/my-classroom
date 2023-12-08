@@ -1,20 +1,33 @@
 import MainLayout from "../../layouts/MainLayout";
 import React from "react";
 import styles from './CoursePage.module.css';
-import {Link} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 import NotebookIcon from "../../components/Icons/coursePageIcons/NotebookIcon";
 import BookIcon from "../../components/Icons/coursePageIcons/BookIcon";
 import UserIcon from "../../components/Icons/coursePageIcons/UserIcon";
 import Task from "../../components/Task/Task";
+import {useSelector} from "react-redux";
+import styled from "styled-components";
 
 function CoursePage() {
+    const {id} = useParams();
+    const course = useSelector(state => state.courses)[id];
+    const ImageContainer = styled.div`
+      position: relative;
+      width: 100%;
+      height: 20rem;
+      background-image: ${course.bg};
+      background-position: ${course.bgPosition};
+      border-radius: 0.5rem;
+      color:${course.color};
+    `
     return (<MainLayout>
         <div className={styles.main}>
-            <div className={styles.courseImageContainer}>
+            <ImageContainer>
                 <div className={styles.courseNameContainer}>
-                    <h1 className={styles.courseName}>IT-Group G</h1>
+                    <h1 className={styles.courseName}>{course.groupName}</h1>
                 </div>
-            </div>
+            </ImageContainer>
             <div className={styles.content}>
                 <div className={styles.events}>
                     <div className={styles.eventsItem}>
@@ -38,90 +51,13 @@ function CoursePage() {
                             <p className={styles.announceText}>Announce something to your class</p>
                         </div>
                     </div>
-                    <Task task={{
-                        "text": "task1 is to do something. " +
-                            "I just need text to test the feature, dont bother yourself reading this, please. " +
-                            "Loren ipsum Loren ipsum Loren ipsum Loren ipsum Loren ipsum",
-                        "date":"Dec 6",
-                        "icon": <NotebookIcon/>
-                    }}/>
-                    <Task task={{
-                        "text": "task2 is to do something. " +
-                            "I just need text to test the feature, dont bother yourself reading this, please. " +
-                            "Loren ipsum Loren ipsum Loren ipsum Loren ipsum Loren ipsum",
-                        "date":"Dec 5",
-                        "icon": <BookIcon/>
-                    }}/>
-                    <Task task={{
-                        "text": "task3 is to do something. " +
-                            "I just need text to test the feature, dont bother yourself reading this, please. " +
-                            "Loren ipsum Loren ipsum Loren ipsum Loren ipsum Loren ipsum",
-                        "date":"Dec 4",
-                        "icon": <NotebookIcon/>
-                    }}/>
-                    <Task task={{
-                        "text": "task4 is to do something. " +
-                            "I just need text to test the feature, dont bother yourself reading this, please. " +
-                            "Loren ipsum Loren ipsum Loren ipsum Loren ipsum Loren ipsum",
-                        "date":"Dec 4",
-                        "icon": <BookIcon/>
-                    }}/>
-                    <Task task={{
-                        "text": "task5 is to do something. " +
-                            "I just need text to test the feature, dont bother yourself reading this, please. " +
-                            "Loren ipsum Loren ipsum Loren ipsum Loren ipsum Loren ipsum",
-                        "date":"Dec 4",
-                        "icon": <NotebookIcon/>
-                    }}/>
-                    <Task task={{
-                        "text": "task6 is to do something. " +
-                            "I just need text to test the feature, dont bother yourself reading this, please. " +
-                            "Loren ipsum Loren ipsum Loren ipsum Loren ipsum Loren ipsum",
-                        "date":"Dec 3",
-                        "icon": <BookIcon/>
-                    }}/>
-                    <Task task={{
-                        "text": "task6 is to do something. " +
-                            "I just need text to test the feature, dont bother yourself reading this, please. " +
-                            "Loren ipsum Loren ipsum Loren ipsum Loren ipsum Loren ipsum",
-                        "date":"Dec 3",
-                        "icon": <NotebookIcon/>
-                    }}/>
-                    <Task task={{
-                        "text": "task7 is to do something. " +
-                            "I just need text to test the feature, dont bother yourself reading this, please. " +
-                            "Loren ipsum Loren ipsum Loren ipsum Loren ipsum Loren ipsum",
-                        "date":"Dec 3",
-                        "icon": <BookIcon/>
-                    }}/>
-                    <Task task={{
-                        "text": "task8 is to do something. " +
-                            "I just need text to test the feature, dont bother yourself reading this, please. " +
-                            "Loren ipsum Loren ipsum Loren ipsum Loren ipsum Loren ipsum",
-                        "date":"Dec 2",
-                        "icon": <NotebookIcon/>
-                    }}/>
-                    <Task task={{
-                        "text": "task9 is to do something. " +
-                            "I just need text to test the feature, dont bother yourself reading this, please. " +
-                            "Loren ipsum Loren ipsum Loren ipsum Loren ipsum Loren ipsum",
-                        "date":"Dec 2",
-                        "icon": <BookIcon/>
-                    }}/>
-                    <Task task={{
-                        "text": "task10 is to do something. " +
-                            "I just need text to test the feature, dont bother yourself reading this, please. " +
-                            "Loren ipsum Loren ipsum Loren ipsum Loren ipsum Loren ipsum",
-                        "date":"Dec 1",
-                        "icon": <NotebookIcon/>
-                    }}/>
-                    <Task task={{
-                        "text": "task11 is to do something. " +
-                            "I just need text to test the feature, dont bother yourself reading this, please. " +
-                            "Loren ipsum Loren ipsum Loren ipsum Loren ipsum Loren ipsum",
-                        "date":"Dec 1",
-                        "icon": <BookIcon/>
-                    }}/>
+                    {
+                        course.tasks.map((task) => {
+                            return (
+                                <Task task={task}/>
+                            )
+                        })
+                    }
                 </div>
             </div>
         </div>

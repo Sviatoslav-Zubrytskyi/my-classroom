@@ -1,9 +1,9 @@
 import React from 'react';
 import styles from "./TripleDotsButton.module.css";
 
-const TripleDotsButton = ({color})=> {
+const TripleDotsButton = ({color, functionCall = null})=> {
     return (
-        <button  className={styles.but}>
+        <button  className={styles.but} onClick={functionCall}>
             <svg focusable="false" width="24" height="24" viewBox="0 0 24 24"
                  className={styles.tripleDotsIcon}
                  fill={color}>
