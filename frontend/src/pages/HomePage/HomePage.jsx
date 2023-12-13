@@ -11,59 +11,59 @@ import NotebookIcon from "../../components/Icons/coursePageIcons/NotebookIcon";
 import bgJS from "../../images/JSbg.png";
 
 function HomePage() {
-    const courses = useSelector(state => state.courses);
-    const [items, setItems] = useState('');
-    const [newItem, setNewItem] = useState('some info');
+    //const courses = useSelector(state => state.courses);
+    const [courseslist, setCourseslist] = useState([]);
     useEffect(() => {
         // Fetch data from the server on component mount
         axios.get('http://localhost:5050/api/courses').then((response) => {
-            setItems(response.data);
+            setCourseslist(response.data);
         });
     }, []);
+    const courses = courseslist;
 
-    const handleAddItem = () => {
-        // Add a new item to the database
-        axios.post('http://localhost:5050/api/courses',
-            {
-                "teacher": "Viktor",
-                "groupName": "JS group",
-                "bg": `url(${bgJS})`,
-                "bgPosition":"center center",
-                "color":"black",
-                "tasks": [
-                {
-                    "text": "fix my BUGS, please UwU",
-                    "date": "Dec 4",
-                    "icon": "BookIcon"
-                },
-                {
-                    "text": "fix my BUGS, please UwU",
-                    "date": "Dec 4",
-                    "icon": "BookIcon"
-                },
-                {
-                    "text": "fix my BUGS, please UwU",
-                    "date": "Dec 4",
-                    "icon": "BookIcon"
-                },
-                {
-                    "text": "fix my BUGS, please UwU",
-                    "date": "Dec 4",
-                    "icon": "BookIcon"
-                },
-            ]
-        }).then((response) => {
-            setItems([...items, response.data]);
-            setNewItem("")
-        })
-    };
+    // const handleAddItem = () => {
+    //     // Add a new item to the database
+    //     axios.post('http://localhost:5050/api/courses',
+    //         {
+    //             "teacher": "Viktor",
+    //             "groupName": "JS group",
+    //             "bg": `url(${bgJS})`,
+    //             "bgPosition":"center center",
+    //             "color":"black",
+    //             "tasks": [
+    //             {
+    //                 "text": "fix my BUGS, please UwU",
+    //                 "date": "Dec 4",
+    //                 "icon": "BookIcon"
+    //             },
+    //             {
+    //                 "text": "fix my BUGS, please UwU",
+    //                 "date": "Dec 4",
+    //                 "icon": "BookIcon"
+    //             },
+    //             {
+    //                 "text": "fix my BUGS, please UwU",
+    //                 "date": "Dec 4",
+    //                 "icon": "BookIcon"
+    //             },
+    //             {
+    //                 "text": "fix my BUGS, please UwU",
+    //                 "date": "Dec 4",
+    //                 "icon": "BookIcon"
+    //             },
+    //         ]
+    //     }).then((response) => {
+    //         setItems([...items, response.data]);
+    //         setNewItem("")
+    //     })
+    // };
     return (
         <MainLayout>
             <div className={styles.courses}>
                 {courses.map((course) => {
                     return (
                         <Course
-                            id={course.id}
+                            id={course._id}
                             teacher={course.teacher}
                             groupName={course.groupName}
                             bg={course.bg}
@@ -72,8 +72,9 @@ function HomePage() {
                         />
                     )
                 })}
-            <button style={{width:"40px",
-                height:"40px"}} onClick={handleAddItem}></button>
+            {/*<button style={{width:"40px",*/}
+            {/*    height:"40px"}} onClick={handleAddItem}>*/}
+            {/*</button>*/}
             </div>
         </MainLayout>
     );

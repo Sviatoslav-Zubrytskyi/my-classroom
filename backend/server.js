@@ -35,7 +35,24 @@ app.get('/api/courses', async (req, res) => {
     const courses = await Course.find();
     res.json(courses);
 });
+app.get('/api/courses/:id', async (req, res) => {
+    const courseId = req.params.id;
 
+    try {
+        // Find the course by ID
+        const course = await Course.findById(courseId);
+
+        if (!course) {
+            return res.status(404).json({ message: 'Course not found' });
+        }
+
+        // Display the course details
+        res.json(course);
+    } catch (error) {
+        console.error('Error finding course:', error.message);
+        res.status(500).json({ message: 'Internal server error' });
+    }
+});
 app.post('/api/courses', async (req, res) => {
     const newCourse = new Course(req.body);
     await newCourse.save();
