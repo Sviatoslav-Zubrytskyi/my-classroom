@@ -21,42 +21,7 @@ function HomePage() {
     }, []);
     const courses = courseslist;
 
-    // const handleAddItem = () => {
-    //     // Add a new item to the database
-    //     axios.post('http://localhost:5050/api/courses',
-    //         {
-    //             "teacher": "Viktor",
-    //             "groupName": "JS group",
-    //             "bg": `url(${bgJS})`,
-    //             "bgPosition":"center center",
-    //             "color":"black",
-    //             "tasks": [
-    //             {
-    //                 "text": "fix my BUGS, please UwU",
-    //                 "date": "Dec 4",
-    //                 "icon": "BookIcon"
-    //             },
-    //             {
-    //                 "text": "fix my BUGS, please UwU",
-    //                 "date": "Dec 4",
-    //                 "icon": "BookIcon"
-    //             },
-    //             {
-    //                 "text": "fix my BUGS, please UwU",
-    //                 "date": "Dec 4",
-    //                 "icon": "BookIcon"
-    //             },
-    //             {
-    //                 "text": "fix my BUGS, please UwU",
-    //                 "date": "Dec 4",
-    //                 "icon": "BookIcon"
-    //             },
-    //         ]
-    //     }).then((response) => {
-    //         setItems([...items, response.data]);
-    //         setNewItem("")
-    //     })
-    // };
+
     return (
         <MainLayout>
             <div className={styles.courses}>
@@ -72,9 +37,6 @@ function HomePage() {
                         />
                     )
                 })}
-            {/*<button style={{width:"40px",*/}
-            {/*    height:"40px"}} onClick={handleAddItem}>*/}
-            {/*</button>*/}
             </div>
         </MainLayout>
     );

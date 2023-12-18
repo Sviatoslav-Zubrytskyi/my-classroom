@@ -3,9 +3,46 @@ import Logo from '../Icons/Logo/Logo';
 import MenuButton from "../MenuButton/MenuButton";
 import {Link} from "react-router-dom";
 import profileImage from '../../images/Sviatoslav.jpg'
+import axios from "axios";
+import bgJS from "../../images/JSbg.png";
 
 const Navbar = () => {
-
+    const handleAddItem = () => {
+        // Add a new item to the database
+        axios.post('http://localhost:5050/api/courses',
+            {
+                "teacher": "Viktor",
+                "groupName": "TEST TEST TEST",
+                "bg": `url(${bgJS})`,
+                "bgPosition": "center center",
+                "color": "black",
+                "tasks": [
+                    {
+                        "text": "fix my BUGS, please UwU",
+                        "date": "Dec 4",
+                        "icon": "BookIcon"
+                    },
+                    {
+                        "text": "fix my BUGS, please UwU",
+                        "date": "Dec 4",
+                        "icon": "BookIcon"
+                    },
+                    {
+                        "text": "fix my BUGS, please UwU",
+                        "date": "Dec 4",
+                        "icon": "BookIcon"
+                    },
+                    {
+                        "text": "fix my BUGS, please UwU",
+                        "date": "Dec 4",
+                        "icon": "BookIcon"
+                    },
+                ]
+            }).then((response) => {
+            // setItems([...items, response.data]);
+            // setNewItem("")
+        })
+    };
     return (
         <nav className={styles.navbar}>
             <div className={styles.leftNav}>
