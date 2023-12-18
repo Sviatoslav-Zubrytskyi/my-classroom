@@ -4,6 +4,7 @@ import {Link} from "react-router-dom";
 import TripleDotsButton from "../Icons/tripleDotsButton/TripleDotsButton";
 import styled from "styled-components";
 import {useSelector} from "react-redux";
+import axios from "axios";
 
 // Move styled components outside of the functional component
 const CourseInfo = styled.div`
@@ -24,6 +25,16 @@ const CourseInfo = styled.div`
 `;
 
 const Course = ({groupName, teacher, bg, bgPosition, color, id}) => {
+    console.log(id)
+    const deleteCourse = () => {
+        axios.delete(`http://localhost:5050/api/courses/${id}`)
+            .then(response => {
+                console.log(response)
+            })
+            .catch(error => {
+                console.error(error);
+            })
+    }
     return (
         <div className={styles.course}>
             <CourseInfo color={color} bg={bg} bgPosition={bgPosition}>
@@ -42,6 +53,9 @@ const Course = ({groupName, teacher, bg, bgPosition, color, id}) => {
                     <path d="M20 6h-8l-2-2H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm0 12H4V8h16v10z"></path>
                 </svg>
             </div>
+            <button onClick={deleteCourse}>
+                delete course
+            </button>
         </div>
     );
 };

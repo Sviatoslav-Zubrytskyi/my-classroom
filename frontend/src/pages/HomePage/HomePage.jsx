@@ -20,11 +20,31 @@ function HomePage() {
         });
     }, []);
     const courses = courseslist;
-
+    const newCourse = {
+        "teacher": "Viktor",
+        "groupName": "JS group",
+        "bg": `url(${bgJS})`,
+        "bgPosition":"center center",
+        "color":"black",
+        "tasks": []
+    }
+    const postNewCourse = (course) => {
+        console.log(`trying to post:${course}`)
+        axios.post(`http://localhost:5050/api/courses/`, course)
+            .then(response => {
+                console.log(response)
+            })
+            .catch(error => {
+                console.error(error);
+            })
+    }
 
     return (
         <MainLayout>
             <div className={styles.courses}>
+                <button onClick={() => postNewCourse(newCourse)}>
+                    postNewCourse
+                </button>
                 {courses.map((course) => {
                     return (
                         <Course

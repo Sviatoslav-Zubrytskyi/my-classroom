@@ -26,10 +26,11 @@ const CoursePage = () => {
         const [course, setCourse] = useState({});
         const [loading, setLoading] = useState(true);
         const [error, setError] = useState(false);
-        const findItemById = (id) => {
-            axios.get(`http://localhost:5050/api/courses/${id}`).then((response) => {
-                setCourse(response.data)
-            }).catch((error) => {
+        const [tasks, setTasks] = useState([]);
+        const getCourseInfo = (id) => {
+            axios.get(`http://localhost:5050/api/courses/${id}`).then(response => {
+                setCourse(response.data);
+            }).catch(error => {
                 console.error("error while fetching:" + error)
                 setError(true);
             }).finally(() => {
@@ -37,20 +38,30 @@ const CoursePage = () => {
                 }
             )
         };
+        const getTasks = (id) => {
+            axios.get(`http://localhost:5050/api/courses/${id}/tasks`).then((response) => {
+                setTasks(response.data);
+                // console.log(tasks)
+            }).catch(error => {
+                console.error(error);
+                setError(true);
+            })
+        }
         useEffect(() => {
-            findItemById(id);
+            getCourseInfo(id);
+            getTasks(id);
         }, [id]);
 
 
         const newTask = {
-            text: "task1 is to do something. " +
+            "text": "task1 is to do something. " +
                 "I just need text to test the feature, dont bother yourself reading this, please. " +
                 "Loren ipsum Loren ipsum Loren ipsum Loren ipsum Loren ipsum",
-            date: "Dec 4",
-            icon: "BookIcon"
+            "date": "Dec 4",
+            "icon": "BookIcon"
         }
-        const postNewTask = () => {
-            axios.post(`api/courses/${id}/tasks`, newTask)
+        const postNewTask = (task) => {
+            axios.post(`http://localhost:5050/api/courses/${id}/tasks`, task)
                 .then(response => {
                     console.log("new task was created:", response.data);
                 })
@@ -146,14 +157,14 @@ const CoursePage = () => {
                                     <p className={styles.announceText}>Announce something to your class</p>
                                 </div>
                             </div>
-                            {/*{course.tasks.map((task) => (*/}
-                            {/*    <Task key={task.id} task={task}/>*/}
-                            {/*))}*/}
-                            <Task task={{
-                                "icon": <FontAwesomeIcon icon="fa-solid fa-spinner" spin/>,
-                                "text": "loading2"
-                            }}/>
-                            <button onClick={postNewTask}>Add new task</button>
+                            <button onClick={() => postNewTask(newTask)}>Add new task</button>
+                            {tasks.map((task) => (
+                                <Task key={task.id} task={task}/>
+                            ))}
+                            {/*<Task task={{*/}
+                            {/*    "icon": <FontAwesomeIcon icon="fa-solid fa-spinner" spin/>,*/}
+                            {/*    "text": "loading2"*/}
+                            {/*}}/>*/}
                         </div>
                     </div>
                 </div>

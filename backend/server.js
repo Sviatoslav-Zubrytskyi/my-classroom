@@ -78,6 +78,7 @@ app.post('/api/courses/:id/tasks', async (req, res) => {
     const taskDetails = req.body;
 
     try {
+        console.log('Received taskDetails:', taskDetails);
         // Check if the course exists
         const course = await Course.findById(courseId);
 
@@ -96,10 +97,27 @@ app.post('/api/courses/:id/tasks', async (req, res) => {
         res.json({course, newTask});
     } catch (error) {
         console.error('Error adding task to course:', error.message);
-        res.status(500).json({message: 'Internal server error'});
+        res.status(500).json({message: 'Internal server error', error: error.message });
     }
 });
+app.get('/api/courses/:id/tasks', async(req,res) => {
+    const courseId = req.params.id;
+    try {
+        // Find the course by ID and populate the 'tasks' field
+        const course = await Course.findById(courseId).populate('tasks').exec();
 
+        if (!course) {
+            return res.status(404).json({message: 'Course not found'});
+        }
+
+        // Extract tasks from the course and send the response
+        const tasks = course.tasks;
+        res.json(tasks);
+    } catch (error) {
+        console.error('Error finding tasks for course:', error.message);
+        res.status(500).json({message: 'Internal server error', error: error.message });
+    }
+});
 
 app.delete('/api/courses/:id', async (req, res) => {
     try {
