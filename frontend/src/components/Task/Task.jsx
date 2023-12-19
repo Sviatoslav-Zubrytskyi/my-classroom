@@ -1,12 +1,25 @@
 import styles from "./Task.module.css";
 
 import {Link} from "react-router-dom";
-import React from "react";
+import React, {useEffect, useState} from "react";
 import TripleDotsButton from "../Icons/tripleDotsButton/TripleDotsButton";
 import BookIcon from "../Icons/coursePageIcons/BookIcon";
 import NotebookIcon from "../Icons/coursePageIcons/NotebookIcon";
+import axios from "axios";
+import {useSelector} from "react-redux";
 
-const Task = ({task}) => {
+const Task = ({task, courseId, updateTaskList}) => {
+    // const sharedState = useSelector((state) => state.sharedState);
+    // const [rerenderFlag, setRerenderFlag] = useState(false);
+    const deleteTask = () => {
+        axios.delete(`http://localhost:5050/api/tasks/${task._id}`).then(response => {
+            console.log(`task was deleted: ${response.data}`);
+            updateTaskList();
+            // setRerenderFlag(true);
+        }).catch(error => {
+            console.error(error);
+        })
+    }
     return (
             <div className={`${styles.task}`}>
                 <Link to={"/task"} className={styles.taskLink}></Link>
@@ -21,7 +34,7 @@ const Task = ({task}) => {
                     </div>
                 </div>
                 <div className={styles.distance}></div>
-                <TripleDotsButton color="gray"/>
+                <TripleDotsButton color="gray" functionCall={() => deleteTask()}/>
             </div>
     );
 };

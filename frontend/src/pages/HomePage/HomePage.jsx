@@ -13,11 +13,14 @@ import bgJS from "../../images/JSbg.png";
 function HomePage() {
     //const courses = useSelector(state => state.courses);
     const [courseslist, setCourseslist] = useState([]);
-    useEffect(() => {
-        // Fetch data from the server on component mount
+    const getCourses = () => {
         axios.get('http://localhost:5050/api/courses').then((response) => {
             setCourseslist(response.data);
         });
+    }
+    useEffect(() => {
+        // Fetch data from the server on component mount
+        getCourses();
     }, []);
     const courses = courseslist;
     const newCourse = {
@@ -29,10 +32,11 @@ function HomePage() {
         "tasks": []
     }
     const postNewCourse = (course) => {
-        console.log(`trying to post:${course}`)
+        // console.log(`trying to post:${course}`)
         axios.post(`http://localhost:5050/api/courses/`, course)
             .then(response => {
                 console.log(response)
+                getCourses();
             })
             .catch(error => {
                 console.error(error);
@@ -54,6 +58,7 @@ function HomePage() {
                             bg={course.bg}
                             bgPosition={course.bgPosition}
                             color={course.color}
+                            updateCourseList={getCourses}
                         />
                     )
                 })}

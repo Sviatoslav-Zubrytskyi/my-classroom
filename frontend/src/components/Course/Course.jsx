@@ -24,12 +24,12 @@ const CourseInfo = styled.div`
   background-position: ${(props) => props.bgPosition};
 `;
 
-const Course = ({groupName, teacher, bg, bgPosition, color, id}) => {
-    console.log(id)
+const Course = ({groupName, teacher, bg, bgPosition, color, id, updateCourseList}) => {
     const deleteCourse = () => {
         axios.delete(`http://localhost:5050/api/courses/${id}`)
             .then(response => {
                 console.log(response)
+                updateCourseList();
             })
             .catch(error => {
                 console.error(error);

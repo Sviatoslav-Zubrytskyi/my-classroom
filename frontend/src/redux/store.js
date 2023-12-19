@@ -9,13 +9,16 @@ import NotebookIcon from "../components/Icons/coursePageIcons/NotebookIcon";
 
 // Define an initial state and a reducer
 const initialState = {
-    sharedState: 'Initial Value'
+    sharedState: 'Initial Value',
+    sharedTasks: []
 };
 
 const rootReducer = (state = initialState, action) => {
     switch (action.type) {
         case 'UPDATE_SHARED_STATE':
             return { ...state, sharedState: action.payload };
+        case 'UPDATE_SHARED_TASKS':
+            return { ...state, sharedTasks: action.payload };
         default:
             return state;
     }
