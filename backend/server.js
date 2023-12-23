@@ -43,6 +43,7 @@ const courseSchema = new mongoose.Schema({
 });
 
 
+
 // Define a simple model
 
 const Course = mongoose.model('Course', courseSchema);
