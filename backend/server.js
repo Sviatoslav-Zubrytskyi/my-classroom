@@ -43,12 +43,12 @@ const courseSchema = new mongoose.Schema({
 });
 
 
-
 // Define a simple model
 
 const Course = mongoose.model('Course', courseSchema);
 // Routes
 app.get('/api/courses', async (req, res) => {
+    //transfered
     try {
         const courses = await Course.find();
         res.json(courses);
@@ -58,8 +58,8 @@ app.get('/api/courses', async (req, res) => {
     }
 });
 app.get('/api/courses/:id', async (req, res) => {
-    const courseId = req.params.id;
     try {
+        const courseId = req.params.id;
         // Find the course by ID and populate the 'tasks' field
         const course = await Course.findById(courseId).populate('tasks').exec();
 
@@ -122,8 +122,8 @@ app.post('/api/courses/:id/tasks', async (req, res) => {
     }
 });
 app.get('/api/courses/:id/tasks', async (req, res) => {
-    const courseId = req.params.id;
     try {
+        const courseId = req.params.id;
         // Find the course by ID and populate the 'tasks' field
         const course = await Course.findById(courseId).populate('tasks').exec();
 
