@@ -10,7 +10,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use('/api/courses', courseRoutes);
-app.use('api/courses/:id/tasks', taskRoutes);
+app.use('/api/courses', taskRoutes);
 const start = async () => {
     try {
         await mongoose.connect('mongodb+srv://admin:admin@cluster0.8yqyuwo.mongodb.net/?retryWrites=true&w=majority', {

@@ -1,4 +1,4 @@
-import Task from '../models/TaskDescription.js';
+import Task from '../models/Task.js';
 import TaskDescription from "../models/TaskDescription.js";
 import Course from "../models/Course.js";
 
@@ -13,7 +13,7 @@ export const getAllCourses = async (req, res) => {
 }
 export const getCourseById = async (req, res) => {
     try {
-        const courseId = req.params.id;
+        const {courseId} = req.params;
         // Find the course by ID and populate the 'tasks' field
         const course = await Course.findById(courseId).populate('tasks').exec();
 
@@ -41,10 +41,10 @@ export const postCourse = async (req, res) => {
 
 export const deleteCourse = async (req, res) => {
     try {
-        const {id} = req.params;
+        const {courseId} = req.params;
 
         // Find the course to get the associated tasks and task descriptions
-        const course = await Course.findById(id);
+        const course = await Course.findById(courseId);
 
         if (!course) {
             return res.status(404).json({message: 'Course not found'});
@@ -69,7 +69,7 @@ export const deleteCourse = async (req, res) => {
         }));
 
         // Delete the course
-        await Course.findByIdAndDelete(id);
+        await Course.findByIdAndDelete(courseId);
 
         res.json({message: 'Course, tasks, and related task descriptions deleted'});
     } catch (error) {

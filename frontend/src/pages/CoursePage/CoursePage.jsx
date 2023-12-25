@@ -171,6 +171,9 @@ const CoursePage = () => {
                             </div>
                         </div>
                         <button onClick={() => postNewTask(newTask)}>Add new task</button>
+                        {
+                            console.log(tasks)
+                        }
                         {tasks.map((task) => (
                             <Task key={task._id} task={task} courseId={id} updateTaskList={updateTaskList}/>
                         ))}

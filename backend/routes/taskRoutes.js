@@ -1,13 +1,17 @@
 import {Router} from "express";
 import {
     getTasks,
-    postTask
+    getTaskAndItsDescriptionByTaskId,
+    postTask,
+    deleteTask
 } from "../controllers/taskController.js";
+
 
 const router = new Router();
 
-router.get('/', getTasks);
-router.post('/', postTask);
-
+router.get('/:courseId/tasks', getTasks);
+router.get('/:courseId/tasks/:taskId', getTaskAndItsDescriptionByTaskId);
+router.post('/:courseId/tasks', postTask);
+router.delete('/:courseId/tasks/:taskId', deleteTask);
 
 export default router;

@@ -1,49 +1,64 @@
-import Task from '../models/TaskDescription.js';
+import Task from '../models/Task.js';
 import TaskDescription from "../models/TaskDescription.js";
 import Course from "../models/Course.js";
 
 export const getTasks = async (req, res) => {
     try {
-        const courseId = req.params.id;
-        // Find the course by ID and populate the 'tasks' field
+        const courseId = req.params.courseId;
         const course = await Course.findById(courseId).populate('tasks').exec();
+        console.log('Received courseId:', courseId);
 
-        if (!course) {
-            return res.status(404).json({message: 'Course not found'});
-        }
-
-        // Extract tasks from the course and send the response
-        const tasks = course.tasks;
-        res.json(tasks);
+        res.json(course.tasks);
     } catch (error) {
         console.error('Error finding tasks for course:', error.message);
         res.status(500).json({message: 'Internal server error', error: error.message});
     }
 }
+export const getTaskAndItsDescriptionByTaskId = async (req, res) => {
+    try {
+        const {taskId} = req.params;
+        console.log(`Received taskId: ${taskId}`)
+        // Find the task by ID and populate the 'description' field
+        const task = await Task.findById(taskId).populate('description').exec();
+
+        if (!task) {
+            return res.status(404).json({message: 'Task not found'});
+        }
+
+        // Display the task details with populated description
+        res.json(task);
+    } catch (error) {
+        console.error('Error finding course:', error.message);
+        res.status(500).json({message: 'Internal server error'});
+    }
+}
 export const postTask = async (req, res) => {
     try {
-        const courseId = req.params.id;
+        const courseId = req.params.courseId;
+        console.log('Received courseId:', courseId);
         const {
             text, date, icon,
             descriptionText, author, attachedFiles, privateComments, publicComments
         } = req.body;
-        // console.log('Received taskDetails:', taskDetails);
+
         // Check if the course exists
         const course = await Course.findById(courseId);
 
         if (!course) {
             return res.status(404).json({message: 'Course not found'});
         }
+
         // Create a new task description
-        const newTaskDescription = new TaskDescription({
+        const newTaskDescription = await TaskDescription.create({
             descriptionText, author, attachedFiles,
             privateComments, publicComments
         });
-        await newTaskDescription.save();
-
+        console.log(newTaskDescription._id);
         // Create a new task
-        const newTask = new Task({text, date, icon, description: newTaskDescription._id});
-        await newTask.save();
+        const newTask = await Task.create({
+            text, date, icon, description: newTaskDescription._id
+        });
+
 
         // Add the task to the course's tasks array
         course.tasks.push(newTask._id);
@@ -56,3 +71,23 @@ export const postTask = async (req, res) => {
     }
 }
 
+export const deleteTask = async (req, res) => {
+    try {
+        const taskId = req.params.taskId;
+        // Find the task by ID and remove it
+        const deletedTask = await Task.findByIdAndDelete(taskId);
+
+        if (!deletedTask) {
+            return res.status(404).json({message: 'Task not found'});
+        }
+        await TaskDescription.findByIdAndDelete(deletedTask.description);
+
+        // Remove the task reference from all associated courses
+        await Course.updateMany({tasks: taskId}, {$pull: {tasks: taskId}});
+
+        res.json({message: 'Task deleted', deletedTask});
+    } catch (error) {
+        console.error('Error deleting task:', error.message);
+        res.status(500).json({message: 'Internal server error', error: error.message});
+    }
+}
