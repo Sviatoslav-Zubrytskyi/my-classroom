@@ -9,9 +9,9 @@ import {
 
 const router = new Router();
 
-router.get('/:courseId/tasks', getTasks);
-router.get('/:courseId/tasks/:taskId', getTaskAndItsDescriptionByTaskId);
-router.post('/:courseId/tasks', postTask);
-router.delete('/:courseId/tasks/:taskId', deleteTask);
+router.get('/:courseId', getTasks);
+router.get('/:courseId/:taskId', getTaskAndItsDescriptionByTaskId);
+router.post('/:courseId', postTask);
+router.delete('/:courseId/:taskId', deleteTask);
 
 export default router;

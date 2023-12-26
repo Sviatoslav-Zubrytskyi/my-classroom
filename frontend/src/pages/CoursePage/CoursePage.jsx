@@ -42,7 +42,7 @@ const CoursePage = () => {
         )
     };
     const getTasks = (id) => {
-        axios.get(`http://localhost:5050/api/courses/${id}/tasks`).then((response) => {
+        axios.get(`http://localhost:5050/api/tasks/${id}`).then((response) => {
             setTasks(response.data);
             // setRerenderFlag(false);
             // dispatch({ type: 'UPDATE_SHARED_TASKS', payload: response.data });
@@ -70,7 +70,7 @@ const CoursePage = () => {
         "privateComments": ["private comment1", "private comment2"],
     }
     const postNewTask = (task) => {
-        axios.post(`http://localhost:5050/api/courses/${id}/tasks`, task)
+        axios.post(`http://localhost:5050/api/tasks/${id}`, task)
             .then(response => {
                 console.log("new task was created:", response.data);
                 // setRerenderFlag(true)

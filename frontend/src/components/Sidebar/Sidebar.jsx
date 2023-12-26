@@ -3,14 +3,14 @@ import {Link, useLocation} from "react-router-dom";
 import styled from 'styled-components';
 import { useSelector } from 'react-redux';
 const Aside = styled.aside`
-  min-width: ${props => (props.sidebarIsOpen ? '4.75rem' : '18.75rem')};
+  min-width: ${props => (props.$sidebarIsOpen ? '4.75rem' : '18.75rem')};
   @media (max-width: 1248px) {
     position: fixed;
   }
   @media (max-width: 600px) {
     position: fixed;
-    width: ${props => (props.sidebarIsOpen ? '0' : '18.75rem')};
-    min-width: ${props => (props.sidebarIsOpen ? '0' : '18.75rem')};
+    width: ${props => (props.$sidebarIsOpen ? '0' : '18.75rem')};
+    min-width: ${props => (props.$sidebarIsOpen ? '0' : '18.75rem')};
     overflow: hidden;
   }
 `;
@@ -20,7 +20,7 @@ const Sidebar = () => {
     const isHomeActive = currentPage === "/home" || currentPage === "/";
     const isCourseActive = currentPage === "/course";
     return (
-        <Aside sidebarIsOpen={sharedState} className={styles.sidebar}>
+        <Aside $sidebarIsOpen={sharedState} className={styles.sidebar}>
             <div className={styles.items}>
                 <Link to="/home" className={`${styles.item} ${isHomeActive ? styles.focus : ''}`}>
                     <svg focusable="false" width="24" height="24" viewBox="0 0 24 24">

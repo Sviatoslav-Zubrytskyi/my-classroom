@@ -11,6 +11,7 @@ import {
     createHashRouter,
     RouterProvider
 } from "react-router-dom";
+import LoginPage from "./pages/LoginPage/LoginPage";
 
 const router = createHashRouter([
     {
@@ -28,6 +29,10 @@ const router = createHashRouter([
     {
         path: "/task",
         element: <TaskPage/>
+    },
+    {
+        path: "/login",
+        element: <LoginPage/>
     }
 ])
 const root = ReactDOM.createRoot(document.getElementById('root'));

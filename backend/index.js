@@ -4,16 +4,20 @@ import cors from "cors";
 import dotenv from "dotenv";
 import courseRoutes from "./routes/courseRoutes.js";
 import taskRoutes from "./routes/taskRoutes.js";
+import authRoutes from "./routes/authRoutes.js";
 
 const app = express();
 dotenv.config();
+
 const {PORT, DB_USER, DB_PASSWORD, DB_NAME, DB_ID} = process.env
 
 app.use(cors());
 app.use(express.json());
 
 app.use('/api/courses', courseRoutes);
-app.use('/api/courses', taskRoutes);
+app.use('/api/tasks', taskRoutes);
+app.use('/api/auth', authRoutes);
+
 const start = async () => {
     try {
         await mongoose.connect(

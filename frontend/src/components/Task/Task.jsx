@@ -10,7 +10,7 @@ const Task = ({task, courseId, updateTaskList}) => {
     // const sharedState = useSelector((state) => state.sharedState);
     // const [rerenderFlag, setRerenderFlag] = useState(false);
     const deleteTask = () => {
-        axios.delete(`http://localhost:5050/api/courses/${courseId}/tasks/${task._id}`).then(response => {
+        axios.delete(`http://localhost:5050/api/tasks/${courseId}/${task._id}`).then(response => {
             console.log(`task was deleted: ${response.data}`);
             updateTaskList();
             // setRerenderFlag(true);

@@ -33,7 +33,9 @@ function HomePage() {
     }
     const postNewCourse = (course) => {
         // console.log(`trying to post:${course}`)
-        axios.post(`http://localhost:5050/api/courses/`, course)
+        axios.post(`http://localhost:5050/api/courses/`,{
+                "token": window.localStorage.getItem("token")
+        } ,course)
             .then(response => {
                 console.log(response)
                 getCourses();
