@@ -2,8 +2,8 @@ import mongoose from "mongoose";
 
 const taskDescriptionSchema = new mongoose.Schema(
     {
-        descriptionText: String,
-        author: String,
+        descriptionText: { type: String, required: true },
+        author: { type: String, required: true },
         privateComments: [String],
         publicComments: [String],
         attachedFiles: [String]
