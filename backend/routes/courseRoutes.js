@@ -12,7 +12,7 @@ const router = new Router();
 router.get('/', getAllCourses);
 router.get('/:courseId', getCourseById);
 router.post('/', checkAuth, postCourse);
-router.delete('/:courseId', deleteCourse);
+router.delete('/:courseId', checkAuth, deleteCourse);
 
 
 

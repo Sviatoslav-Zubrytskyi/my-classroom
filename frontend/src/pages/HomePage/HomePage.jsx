@@ -27,15 +27,17 @@ function HomePage() {
         "teacher": "Viktor",
         "groupName": "JS group",
         "bg": `url(${bgJS})`,
-        "bgPosition":"center center",
-        "color":"black",
+        "bgPosition": "center center",
+        "color": "black",
         "tasks": []
     }
     const postNewCourse = (course) => {
         // console.log(`trying to post:${course}`)
-        axios.post(`http://localhost:5050/api/courses/`,{
-                "token": window.localStorage.getItem("token")
-        } ,course)
+        axios.post(`http://localhost:5050/api/courses/`, course, {
+            headers: {
+                'Authorization': window.localStorage.getItem("token")
+            }
+        })
             .then(response => {
                 console.log(response)
                 getCourses();

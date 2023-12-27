@@ -31,7 +31,6 @@ export const getCourseById = async (req, res) => {
 }
 export const postCourse = async (req, res) => {
     try {
-        console.log(`req body:${req.body}`);
         const newCourse = new Course(req.body);
         await newCourse.save();
         res.json(newCourse);
