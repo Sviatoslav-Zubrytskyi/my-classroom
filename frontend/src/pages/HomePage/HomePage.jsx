@@ -47,12 +47,23 @@ function HomePage() {
             })
     }
 
+    const getUser = () => {
+        axios.get('http://localhost:5050/api/auth/user', {
+            headers: {
+                'Authorization': window.localStorage.getItem("token")
+            }
+        }).then(res => {
+            const user = res.data.user;
+            console.log(user);
+        })
+    }
     return (
         <MainLayout>
             <div className={styles.courses}>
                 <button onClick={() => postNewCourse(newCourse)}>
                     postNewCourse
                 </button>
+                <button onClick={() => getUser()}>Get user</button>
                 {courses.map((course) => {
                     return (
                         <Course

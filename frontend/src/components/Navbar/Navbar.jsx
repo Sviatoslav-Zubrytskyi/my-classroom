@@ -57,9 +57,9 @@ const Navbar = () => {
                     <svg focusable="false" width="24" height="24" viewBox="0 0 24 24" className=" NMm5M"><path
                         d="M20 13h-7v7h-2v-7H4v-2h7V4h2v7h7v2z"></path></svg>
                 </span>
-                <div className={styles.profileIcon}>
+                <Link to={"/login"} className={styles.profileIcon}>
                     <img src={profileImage} alt="profileIcon" className={styles.profileImage}/>
-                </div>
+                </Link>
             </div>
         </nav>
     );

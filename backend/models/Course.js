@@ -1,7 +1,9 @@
 import mongoose from "mongoose";
+import { nanoid } from "nanoid";
 
 const courseSchema = new mongoose.Schema(
     {
+        _id: { type: String, default: () => nanoid(5)},
         teacher: { type: String, required: true },
         groupName: { type: String, required: true },
         bg: { type: String, required: true },
