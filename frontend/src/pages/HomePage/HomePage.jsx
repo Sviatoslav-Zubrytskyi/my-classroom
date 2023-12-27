@@ -53,7 +53,7 @@ function HomePage() {
                 'Authorization': window.localStorage.getItem("token")
             }
         }).then(res => {
-            const user = res.data.user;
+            const user = res.data.user.user;
             console.log(user);
         })
     }
